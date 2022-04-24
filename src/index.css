@@ -39,8 +39,8 @@ h1 > small {
 }
 
 .modal {
-  width: 50%;
-  height: min(50%, 300px);
+  width: 30%;
+  height: 300px;
 
   margin: auto;
   padding: 0 2rem;
@@ -51,6 +51,12 @@ h1 > small {
   background: #eee;
   border: 1px solid #aaa;
   z-index: 2;
+}
+
+@media (max-width: 768px) {
+  .modal {
+    width: 70%;
+  }
 }
 
 .solution {
