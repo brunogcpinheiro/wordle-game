@@ -75,6 +75,7 @@ const useWordle = (solution) => {
   };
 
   const handleKeyup = ({ key }) => {
+    console.log(key === "ç");
     if (key === "Enter") {
       if (turn > wordLength) {
         toast.error("Você não tem mais palpites!");
@@ -100,7 +101,7 @@ const useWordle = (solution) => {
       return;
     }
 
-    if (/^[A-Za-z]$/.test(key)) {
+    if (/^[A-Za-zçÇ]$/.test(key)) {
       if (currentGuess.length < wordLength) {
         setCurrentGuess((prev) => prev + key);
       }
