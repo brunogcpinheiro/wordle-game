@@ -1,25 +1,30 @@
 import React, { useEffect, useState } from "react";
+import { fakeData } from "../data/fakeData";
 
-export default function Keypad({ usedKeys }) {
+export default function Keypad({ usedKeys, handleKeyup }) {
   const [letters, setLetters] = useState(null);
 
   useEffect(() => {
-    fetch("http://localhost:3001/letters")
-      .then((res) => res.json())
-      .then((json) => {
-        setLetters(json);
-      });
+    setLetters(fakeData.letters);
   }, []);
+
+  // useEffect(() => {
+  //   fetch("http://localhost:3001/letters")
+  //     .then((res) => res.json())
+  //     .then((json) => {
+  //       setLetters(json);
+  //     });
+  // }, []);
 
   return (
     <div>
       <div className="options-wrapper">
-        <div key="Backspace">
+        <div key="Backspace" onClick={() => handleKeyup({ key: "Backspace" })}>
           <span>⌫</span>
-          <span>Backspace</span>
+          <span>BACKSPACE</span>
         </div>
-        <div key="Enter">
-          <span>Enter</span>
+        <div key="Enter" onClick={() => handleKeyup({ key: "Enter" })}>
+          <span>ENTER</span>
           <span>⏎</span>
         </div>
       </div>
@@ -28,7 +33,11 @@ export default function Keypad({ usedKeys }) {
           letters.map((l) => {
             const color = usedKeys[l.key];
             return (
-              <div key={l.key} className={color}>
+              <div
+                key={l.key}
+                className={color}
+                onClick={() => handleKeyup({ key: l.key })}
+              >
                 {l.key}
               </div>
             );

@@ -26,6 +26,51 @@ h1 > small {
   color: #999;
 }
 
+.backdrop {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.modal {
+  width: 50%;
+  height: min(50%, 300px);
+
+  margin: auto;
+  padding: 0 2rem;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #eee;
+  border: 1px solid #aaa;
+  z-index: 2;
+}
+
+.solution {
+  font-size: 1.3rem;
+}
+
+.solution > span {
+  font-weight: bold;
+}
+
+.modal-btn {
+  background: #5ac85a;
+  padding: 10px 20px;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  border-radius: 4px;
+  margin-top: 10px;
+}
+
 .main-wrapper {
   padding: 0 15px;
 }
@@ -98,6 +143,7 @@ h1 > small {
 
 .options-wrapper > div {
   width: 100%;
+  height: 60px;
   margin: 0 10px;
   background: #eee;
   display: flex;
@@ -107,6 +153,7 @@ h1 > small {
   line-height: 40px;
   padding: 0 20px;
   font-weight: bold;
+  cursor: pointer;
 }
 
 .keypad {
@@ -124,6 +171,7 @@ h1 > small {
   display: inline-block;
   border-radius: 6px;
   line-height: 50px;
+  cursor: pointer;
 }
 
 .keypad > div.green {

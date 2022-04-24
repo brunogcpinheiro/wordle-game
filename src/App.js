@@ -25,7 +25,7 @@ const App = () => {
       <h1>
         Wordle <small>(Edição: Julio e Gabi)</small>
       </h1>
-
+      {solution}
       {solution && <Wordle solution={solution} />}
       <Toaster
         position="bottom-center"
