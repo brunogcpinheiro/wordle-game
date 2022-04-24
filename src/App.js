@@ -23,7 +23,17 @@ const App = () => {
   return (
     <div className="App">
       <h1>
-        Wordle <small>(Edição: Julio e Gabi)</small>
+        Wordle{" "}
+        <small>
+          by{" "}
+          <a
+            href="https://github.com/brunogcpinheiro"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Bruno Pinheiro
+          </a>
+        </small>
       </h1>
       {solution && <Wordle solution={solution} />}
       <Toaster

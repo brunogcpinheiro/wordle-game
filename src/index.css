@@ -9,6 +9,12 @@ body {
   font-size: 13px;
 }
 
+a {
+  cursor: pointer;
+  text-decoration: none;
+  color: #e2cc68;
+}
+
 h1 {
   padding: 20px 0;
   border-bottom: 1px solid #ddd;
