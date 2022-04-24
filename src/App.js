@@ -8,7 +8,9 @@ const App = () => {
   const [solution, setSolution] = useState(null);
 
   useEffect(() => {
-    setSolution(fakeData.solutions[0].word);
+    const randomSolution =
+      fakeData.solutions[Math.floor(Math.random() * fakeData.solutions.length)];
+    setSolution(randomSolution.word);
   }, []);
 
   // useEffect(() => {
