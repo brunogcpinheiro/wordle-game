@@ -75,7 +75,6 @@ const useWordle = (solution) => {
   };
 
   const handleKeyup = ({ key }) => {
-    console.log(key === "ç");
     if (key === "Enter") {
       if (turn > wordLength) {
         toast.error("Você não tem mais palpites!");
